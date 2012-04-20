@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Book SYSTEM "gapdoc.dtd">
+
+<Book Name="biogap">
+
+<TitlePage>
+  <Title>The <Package>biogap</Package> Package</Title>
+
+  <Version>Version 0.1.x</Version>
+
+
+  <Author>Attila Egri-Nagy <Email>attila@egri-nagy.hu</Email></Author>
+  <Author>Andrew Francis<Email>a.francis@uws.edu.au</Email></Author>
+
+  <Copyright>&copyright; 2012 A. Egri-Nagy, A. Francis<P/></Copyright>
+
+  <Colophon>
+  This manual describes the &GAP; 4.5 package <Package>biogap</Package> version
+  0.1.x containing algebraic tools for bacterial genomics.
+  </Colophon>
+
+  <Acknowledgements>
+
+    </Acknowledgements>
+</TitlePage>
+
+<TableOfContents/>
+
+<Body>
+  <Chapter Label="intro">
+  <Heading>The <Package>biogap</Package> package</Heading>
+  <Index><Package>biogap</Package> - Overview</Index>	
+  <Section><Heading>Overview and Introduction</Heading>
+  The <Package>biogap</Package> has two goals:
+    <List>
+      <Item>Provide algebraic tools for modelling bacterial genomes.</Item>
+      <Item>Create publication quality diagrams.</Item>
+    </List>
+  </Section>
+
+  <Section Label="install">
+    <Heading>Installing <Package>biogap</Package></Heading>
+
+    In this section we give a brief description of how to start using  
+    <Package>biogap</Package>. If you have any problems getting
+    <Package>biogap</Package> working, then you could try emailling me at
+    <Email>attila@egri-nagy.hu</Email>. <P/>
+
+    It is assumed that you have a working copy of &GAP; with version number 
+    4.5 or higher. The most up-to-date version of &GAP; and instructions on
+    how to install it can be obtained from the main &GAP; webpage
+   <Alt    Only="LaTeX">\vspace{\baselineskip}</Alt><P/>
+       <Alt Only="LaTeX">\noindent\vspace{\baselineskip}</Alt>
+    <URL>http://www.gap-system.org</URL><P/>
+
+    <Alt Only="LaTeX">\noindent</Alt> The following is a summary of the steps 
+    that should lead to a successful
+    installation of <Package>Viz</Package>:
+
+    <List>
+    
+      <Item> download and install the <Package>Orb</Package> package version 
+      3.7 or higher. For more details go to:
+      <Alt    Only="LaTeX">\vspace{\baselineskip}</Alt><P/>
+          <Alt Only="LaTeX">\noindent\vspace{\baselineskip}</Alt><URL>http://www-groups.mcs.st-and.ac.uk/~neunhoef/Computer/Software/Gap/orb.html
+      </URL><P/>
+      <Alt Only="LaTeX">\noindent</Alt> Note that both <Package>Orb</Package>
+      and <Package>Viz</Package> are faster if <Package>Orb</Package>
+      is compiled. 
+      </Item>
+    
+      <Item> download the package archive <C>viz0r1.tar.gz</C> from
+      <Alt    Only="LaTeX">\vspace{\baselineskip}</Alt><P/>
+          <Alt Only="LaTeX">\noindent\vspace{\baselineskip}</Alt><URL>http://www-history.mcs.st-and.ac.uk/~jamesm/viz/index.html
+      </URL></Item>
+    
+      <Item> unzip and untar the file, this should create a directory called
+      <C>viz</C>.</Item>
+    
+      <Item> 
+      locate the <C>pkg</C> directory of your &GAP; directory, which contains
+      several other directories such as <C>lib</C>, <C>doc</C> and so on. Move 
+      the directory <C>viz</C> into the <C>pkg</C> directory.
+      </Item>
+    
+      <Item> start &GAP; in the usual way.</Item>
+    
+      <Item> type <C>LoadPackage("biogap");</C></Item>
+      
+      <Item> compile the documentation by typing <C>BioGapMakeDoc()</C></Item>
+
+    </List>
+
+    Below is an example of an installation of <Package>biogap</Package> in a
+    UNIX environment where <C>GAPROOT</C>  should be substituted with the main 
+    &GAP; directory 
+    (the one containing the folders <C>bin</C>, <C>lib</C>, and so on) in
+    your installation of &GAP;.<P/>
+
+    <Log>
+> gunzip biogap-0.1.x.tar.gz 
+> tar -xf biogap-0.1.x.tar 
+> mv biogap GAPROOT/pkg
+> gap 
+
+[ ... ]
+
+gap> LoadPackage("biogap");
+───────────────────────────────────────────────────────────
+Loading  biogap 0.1.x (biogap - Bacterial Genomics in GAP)
+by Attila Egri-Nagy (http://www.egri-nagy.hu) and
+   Andrew Francis (http://staff.scm.uws.edu.au/~andrew/).
+Homepage: na
+───────────────────────────────────────────────────────────
+true
+gap></Log>
+
+Presuming that the above steps can be completed successfully you will be 
+running the <Package>biogap</Package> package!<P/>
+
+  </Section>
+  
+  <Section Label="doc"><Heading>Compiling the documentation</Heading>
+    To compile the documentation see <Ref Func="BioGapMakeDoc"/>. If you want
+    to use the help system it is essential that you compile the documentation. 
+  </Section>
+</Chapter>
+
+
+<Chapter Label="sp">
+  <Heading>Signed Permutation Groups</Heading>
+  Signed permutations are rearrangements of n points (here represented as integers 1..n) where
+  the orientation of the individual points are also considered.
+  <Section><Heading>Signed Permutations</Heading>
+  <#Include Label="SignedPermutation">
+  <#Include Label="AsSignedPermutation">
+  </Section>
+  
+  <Section><Heading>Hyperoctahedral Generator Sets</Heading>
+  The group containing consisting of all signed permutations of n points is the hyperoctahedral group. 
+  <#Include Label="HyperOctahedralAlgebraicGens">
+  <#Include Label="HyperOctahedralLimitedLengthInversionGens">
+  </Section>
+
+  <Section><Heading>Circular Blocks, Inversions</Heading>
+  These are the low level function constructing generator sets of the hyperoctahedral groups. Functions
+  for constructing contiguous blocks on the circular genome. 
+  <#Include Label="CircularBlock">
+  <#Include Label="CircularBlocksOfSize">
+  <#Include Label="CircularBlocks">
+  <#Include Label="CircularBlocksWithin">
+  <#Include Label="CircularBlock2Inversion">
+  </Section>
+
+
+</Chapter>
+
+</Body>
+
+<Bibliography Databases="biogap" />
+<TheIndex/>
+
+</Book>

@@ -1,0 +1,2 @@
+DeclareGlobalFunction("HyperOctahedralAlgebraicGens");
+DeclareGlobalFunction("HyperOctahedralLimitedLengthInversionGens");

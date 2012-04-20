@@ -1,0 +1,5 @@
+0.1.1
+	Simplifying names for circular blocks and added documentation.
+0.1
+	Initial upload containing functions for signed permutations,
+	and different inversion generator sets for the hyperoctahedral group.
