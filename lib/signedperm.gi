@@ -91,7 +91,7 @@ InstallOtherMethod(\*, "multiplying signed permutations", IsIdenticalObj,
         [IsSignedPermutation, IsSignedPermutation], 0,
 function(sp,sq)
     #we have to swap the order to get right action (content-duality)
-    return  SignedPermutation(sq!.perm * sp!.perm);
+    return  Objectify(SignedPermutationType, rec(perm:=sq!.perm * sp!.perm));
 end
 );
 
@@ -105,7 +105,7 @@ end
 InstallOtherMethod(InverseOp, "inverse of a signed permutation", true,
         [IsSignedPermutation], 0,
 function(sp)
-    return SignedPermutation(Inverse(sp!.perm));
+    return Objectify(SignedPermutationType, rec(perm:=Inverse(sp!.perm)));
 end
 );
 
