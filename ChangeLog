@@ -1,3 +1,5 @@
+0.1.3
+	Added HyperOctahedralAllInversionsGens.
 0.1.2
 	Bugfix: the capability of forming a group by signed permutations was lost at some point. Restored.
 0.1.1

@@ -35,3 +35,9 @@ function(n,l)
   return List(LimitedCircularBlocks(n,l),
               x -> CircularBlock2Inversion(n,x));
 end);
+
+InstallGlobalFunction(HyperOctahedralAllInversionsGens,
+function(n)
+  return List(CircularBlocks(n),
+              x -> CircularBlock2Inversion(n,x));
+end);
