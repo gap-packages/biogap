@@ -5,19 +5,21 @@
 
 # going around the circular genome, like modulo, but start with 1
 # returns the modulo n value but never returns 0
-BIOGAP_CircularMod := function(n,y)
+InstallGlobalFunction(CircularMod,
+function(n,y)
   if y>n then return y mod n; fi;
   return y;
-end;
+end);
 
-#length between two regions, calculated clockwise
-BIOGAP_CircularLength := function(n,x,y)
+#size of a circular block, calculated clockwise, inclusive
+InstallGlobalFunction(SizeOfCircularBlock,
+function(n,x,y)
   if x>y then
     return n+y-x +1;
   else
     return y-x +1;
   fi;
-end;
+end);
 
 # creating a circular block, taking care of bending around the origin
 #n number of regions, first and last region in the block
@@ -26,7 +28,7 @@ function(n,first,last)
   if first <= last then
     return [first..last];
   else
-    return List([first..last+n], x->BIOGAP_CircularMod(n,x));
+    return List([first..last+n], x-> CircularMod(n,x));
   fi;
 end);
 
@@ -35,7 +37,7 @@ InstallGlobalFunction(CircularBlocksOfSize,
 function(n,size)
 local firsts, lasts;
   firsts := [1..n];
-  lasts := List([1..n], x->BIOGAP_CircularMod(n,x+size-1));
+  lasts := List([1..n], x->CircularMod(n,x+size-1));
   return List([1..Size(firsts)],
               x -> CircularBlock(n,firsts[x],lasts[x]));
 end);
@@ -44,7 +46,7 @@ end);
 InstallGlobalFunction(LimitedCircularBlocks,
 function(n,l)
   return Concatenation(
-                 List([1..l], x->CircularBlocksOfSize(n,x)));
+                 List([1..l], x-> CircularBlocksOfSize(n,x)));
 end);
 
 # all blocks of all over the genome
@@ -58,10 +60,10 @@ end);
 InstallGlobalFunction(CircularBlocksOfSizeWithin,
 function(n,first,last,size)
 local firsts, lasts, length, numofblocks;
-  length := BIOGAP_CircularLength(n,first,last);
+  length := SizeOfCircularBlock(n,first,last);
   numofblocks := length - size +1;
-  firsts := List([1..numofblocks], x->BIOGAP_CircularMod(n,first+x-1));
-  lasts := List([1..numofblocks], x->BIOGAP_CircularMod(n,first+size-1+x-1));
+  firsts := List([1..numofblocks], x-> CircularMod(n,first+x-1));
+  lasts := List([1..numofblocks], x-> CircularMod(n,first+size-1+x-1));
   return List([1..Size(firsts)],
               x -> CircularBlock(n,firsts[x],lasts[x]));
 end);

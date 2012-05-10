@@ -1,3 +1,6 @@
+DeclareGlobalFunction("CircularMod");
+DeclareGlobalFunction("SizeOfCircularBlock");
+
 DeclareGlobalFunction("CircularBlock");
 DeclareGlobalFunction("CircularBlocksOfSize");
 DeclareGlobalFunction("CircularBlocks");
