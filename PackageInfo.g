@@ -11,8 +11,8 @@
 SetPackageInfo( rec(
 PackageName := "biogap",
 Subtitle := "Algebraic Tools for Bacterial Genomics",
-Version := "0.1.4",
-Date := "10/05/2012",
+Version := "0.1.5",
+Date := "07/06/2012",
 ArchiveURL :=
           "not yet available",
 ArchiveFormats := ".tar.gz",

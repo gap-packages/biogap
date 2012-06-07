@@ -7,6 +7,9 @@ DeclareGlobalFunction("SignedPermutation");
 DeclareGlobalFunction("AsSignedPermutation");
 DeclareGlobalFunction("ImageListOfSignedPerm");
 DeclareGlobalFunction("PaddedImageListOfSignedPerm");
+DeclareGlobalFunction("ForgetSignsList");
+DeclareGlobalFunction("ForgetSignsPerm");
+DeclareGlobalFunction("ForgetSignsSignedPerm");
 
 #type declarations
 DeclareCategory("IsSignedPermutation", IsMultiplicativeElementWithInverse);

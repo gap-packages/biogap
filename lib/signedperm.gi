@@ -59,6 +59,21 @@ function(signedperm,numofregions)
 end);
 
 
+InstallGlobalFunction(ForgetSignsList,
+function(sp)
+  return List(ImageListOfSignedPerm(sp),x->AbsInt(x));
+end);
+
+InstallGlobalFunction(ForgetSignsPerm,
+function(sp)
+  return PermList(ForgetSignsList(sp));
+end);
+
+InstallGlobalFunction(ForgetSignsSignedPerm,
+function(sp)
+  return SignedPermutation(ForgetSignsList(sp));
+end);
+
 
 ###################################################################
 # polymorphic methods
