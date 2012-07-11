@@ -87,7 +87,7 @@ function(n,block)
 local pos, inversed, l;
   if IsEmpty(block) then return SignedPermutation([]); fi;
   inversed := Reversed(block)*(-1);
-  if block[1] <= LastElementOfList(block) then
+  if block[1] <= block[Length(block)] then
     #just padding from the beginning
     return SignedPermutation(
                    Concatenation([1..block[1]-1],
