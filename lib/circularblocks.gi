@@ -7,7 +7,8 @@
 # returns the modulo n value but never returns 0
 InstallGlobalFunction(CircularMod,
 function(n,y)
-  if y>n then return y mod n; fi;
+  if y > n then return y mod n; fi;
+  if y < 1 then return y + n; fi;
   return y;
 end);
 
