@@ -4,3 +4,5 @@
 ################################################################################
 
 DeclareGlobalFunction("CircularMod");
+DeclareGlobalFunction("CircularDist");
+DeclareGlobalFunction("CircularTranspositions");

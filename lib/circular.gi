@@ -11,3 +11,15 @@ function(n,y)
   if y < 1 then return y + n; fi;
   return y;
 end);
+
+#the distance of region x and y on a circular genome of n regions
+InstallGlobalFunction(CircularDist,
+function(n,x,y)
+  return Minimum(AbsInt(x-y), x-y+n, y-x+n);
+end);
+
+#all swaps on circular genome
+InstallGlobalFunction(CircularTranspositions,
+function(n)
+   return List([1..n], x -> (x,CircularMod(n,x+1)));
+end);
