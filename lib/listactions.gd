@@ -1,0 +1,2 @@
+DeclareGlobalFunction("OnListByCont");
+DeclareGlobalFunction("OnListByPos");
