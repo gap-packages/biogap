@@ -11,10 +11,10 @@
 SetPackageInfo( rec(
 PackageName := "biogap",
 Subtitle := "Algebraic Tools for Bacterial Genomics",
-Version := "0.1.6",
-Date := "14/08/2012",
+Version := "0.1.7",
+Date := "23/08/2012",
 ArchiveURL :=
-          "not yet available",
+          "https://bitbucket.org/dersu/biogap",
 ArchiveFormats := ".tar.gz",
 Persons := [
   rec(
@@ -53,7 +53,7 @@ AbstractHTML := Concatenation(
   "<span class=\"pkgname\">GAP</span>  package  for algebraic tools",
   "for bacterial genomics."),
 
-PackageWWWHome := "na",
+PackageWWWHome := "https://bitbucket.org/dersu/biogap",
 
 PackageDoc := rec(
   BookName  := "biogap",
