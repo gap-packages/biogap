@@ -11,8 +11,8 @@
 SetPackageInfo( rec(
 PackageName := "biogap",
 Subtitle := "Algebraic Tools for Bacterial Genomics",
-Version := "0.1.10",
-Date := "23/08/2012",
+Version := "0.1.11",
+Date := "24/08/2012",
 ArchiveURL :=
           "https://bitbucket.org/dersu/biogap",
 ArchiveFormats := ".tar.gz",

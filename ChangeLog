@@ -1,3 +1,5 @@
+0.1.11
+	Bugfix in ActionGraphSearch: the action was not general enough.
 0.1.10
 	List actions added.
 0.1.9
