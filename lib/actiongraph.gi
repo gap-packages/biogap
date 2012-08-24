@@ -44,7 +44,7 @@ local o, pos;
   if x = y then return [];fi;
 
   #the orbit calculation
-  o := Orb(gens, x, \*, rec(schreier:=true, lookingfor:=[y]));
+  o := Orb(gens, x, action, rec(schreier:=true, lookingfor:=[y]));
   Enumerate(o);
 
   #checking the results
