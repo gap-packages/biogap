@@ -1,3 +1,5 @@
+0.1.13
+	Functions for calculating group geodesics added.
 0.1.12
 	Bugfix: HyperOctahedral*Gens do not give duplicated generators for size 2.
 0.1.11

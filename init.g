@@ -9,3 +9,4 @@ ReadPackage( "biogap", "lib/signedperm.gd" );
 ReadPackage( "biogap", "lib/circular.gd" );
 ReadPackage( "biogap", "lib/circularblocks.gd" );
 ReadPackage( "biogap", "lib/hyperoctahedral.gd" );
+ReadPackage( "biogap", "lib/geodesics.gd" );
