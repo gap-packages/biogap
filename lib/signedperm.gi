@@ -64,6 +64,12 @@ function(sp)
   return List(ImageListOfSignedPerm(sp),x->AbsInt(x));
 end);
 
+InstallGlobalFunction(ForgetSignsPaddedList,
+function(sp,n)
+  return List(PaddedImageListOfSignedPerm(sp,n),x->AbsInt(x));
+end);
+
+
 InstallGlobalFunction(ForgetSignsPerm,
 function(sp)
   return PermList(ForgetSignsList(sp));

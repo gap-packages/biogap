@@ -8,6 +8,7 @@ DeclareGlobalFunction("AsSignedPermutation");
 DeclareGlobalFunction("ImageListOfSignedPerm");
 DeclareGlobalFunction("PaddedImageListOfSignedPerm");
 DeclareGlobalFunction("ForgetSignsList");
+DeclareGlobalFunction("ForgetSignsPaddedList");
 DeclareGlobalFunction("ForgetSignsPerm");
 DeclareGlobalFunction("ForgetSignsSignedPerm");
 
