@@ -23,3 +23,9 @@ InstallGlobalFunction(CircularTranspositions,
 function(n)
    return List([1..n], x -> (x,CircularMod(n,x+1)));
 end);
+
+#just the linear swaps
+InstallGlobalFunction(LinearTranspositions,
+function(n)
+   return List([1..n-1], x -> (x,x+1));
+end);
