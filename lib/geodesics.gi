@@ -39,11 +39,7 @@ local geodesics,d,i,o, collector, limits;
 
   limits := Distances(G);
   geodesics := AssociativeList();
-  d := 0;
-  #calculates the maximum value of keys, here the diameter of the group
-  #TODO! this may go to the associative lists
-  Perform(Keys(limits), function(x) if limits[x]>d then d := limits[x];fi;end);
-
+  d := MaxValueInAssociativeList(limits);
   #---------------------------------------
   collector := function (word,result)
     if Length(word) = limits[result] then
@@ -67,9 +63,7 @@ local numof,d,i,o, collector, limits;
 
   limits := Distances(G);
   numof := AssociativeList();
-  d := 0;
-  Perform(Keys(limits), function(x) if limits[x]>d then d := limits[x];fi;end);
-
+  d := MaxValueInAssociativeList(limits);
   #---------------------------------------
   collector := function (word,result)
     if Length(word) = limits[result] then
