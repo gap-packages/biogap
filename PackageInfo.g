@@ -68,9 +68,9 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.5",
-  NeededOtherPackages := [["sgpdec", ">=0.6"]],
-  SuggestedOtherPackages := [["gapdoc", ">=1.4"]],
+  GAP := ">=4.6",
+  NeededOtherPackages := [["sgpdec", ">=0.7"],["dust", ">=0.1"]],
+  SuggestedOtherPackages := [["gapdoc", ">=1.5"]],
   ExternalConditions := []),
   AvailabilityTest := ReturnTrue,
   Autoload := false,
