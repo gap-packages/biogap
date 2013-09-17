@@ -29,3 +29,15 @@ InstallGlobalFunction(LinearTranspositions,
 function(n)
    return List([1..n-1], x -> (x,x+1));
 end);
+
+InstallGlobalFunction(AllTranspositions,
+function(n)
+  return DuplicateFreeList(
+          List(UnorderedTuples([1..n],2),
+               function(p)
+                 if (p[1]<>p[2]) then
+                   return (p[1],p[2]);
+                 else
+                   return ();fi;
+                 end));
+end);

@@ -7,3 +7,4 @@ DeclareGlobalFunction("CircularMod");
 DeclareGlobalFunction("CircularDist");
 DeclareGlobalFunction("CircularTranspositions");
 DeclareGlobalFunction("LinearTranspositions");
+DeclareGlobalFunction("AllTranspositions");
