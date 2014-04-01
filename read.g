@@ -10,3 +10,5 @@ ReadPackage( "biogap", "lib/circular.gi" );
 ReadPackage( "biogap", "lib/circularblocks.gi" );
 ReadPackage( "biogap", "lib/hyperoctahedral.gi" );
 ReadPackage( "biogap", "lib/geodesics.gi" );
+
+ReadPackage( "biogap", "lib/2inversions.g" );
