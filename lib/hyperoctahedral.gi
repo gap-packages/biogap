@@ -29,6 +29,12 @@ local gens,l;
   return gens;
 end);
 
+#not necessarily a generating set, but can be used for building one
+InstallGlobalFunction(AllInversionsOfSize,
+function(n,k)
+  return DuplicateFreeList(List(CircularBlocksOfSize(n,k),
+                 x -> CircularBlock2Inversion(n,x)));
+end);
 
 InstallGlobalFunction(HyperOctahedralLimitedLengthInversionGens,
 function(n,l)
