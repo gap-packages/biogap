@@ -1,0 +1,1 @@
+A GAP4 package for abstract algebraic algorithms in bacterial genomics. The current implementation contains methods dealing with signed permutations and several methods for calculating the word distance in different group models. 
