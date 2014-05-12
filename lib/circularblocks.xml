@@ -1,0 +1,75 @@
+<#GAPDoc Label="CircularBlock">
+<ManSection >
+  <Func Arg="n, first, last" Name="CircularBlock" />
+  <Description>
+    Creates a contiguous block of a circular genome of n regions, from first to last.
+    <Example>
+      gap> CircularBlock(7,2,5);
+      [ 2 .. 5 ]
+      gap> CircularBlock(7,6,3);
+      [ 6, 7, 1, 2, 3 ]
+    </Example>
+  </Description>
+</ManSection>
+<#/GAPDoc>
+
+<#GAPDoc Label="CircularBlocksOfSize">
+<ManSection >
+  <Func Arg="n, size" Name="CircularBlocksOfSize" />
+  <Description>
+    Creates all contiguous blocks of a circular genome of n regions that have a given size.
+    <Example>
+      gap> CircularBlocksOfSize(5,2);
+      [ [ 1, 2 ], [ 2, 3 ], [ 3, 4 ], [ 4, 5 ], [ 5, 1 ] ]
+    </Example>
+  </Description>
+</ManSection>
+<#/GAPDoc>
+
+<#GAPDoc Label="CircularBlocks">
+<ManSection >
+  <Func Arg="n" Name="CircularBlocks" />
+  <Func Arg="n, size" Name="LimitedCircularBlocks" />
+  <Description>
+    Creates all or all of some limiting size contiguous block of a circular genome of n regions.
+    <Example>
+      gap> CircularBlocks(3);         
+      [ [ 1 ], [ 2 ], [ 3 ], 
+        [ 1, 2 ], [ 2, 3 ], [ 3, 1 ], 
+	[ 1 .. 3 ], [ 2, 3, 1 ], [ 3, 1, 2 ] ]
+      gap> LimitedCircularBlocks(3,2);
+      [ [ 1 ], [ 2 ], [ 3 ], 
+        [ 1, 2 ], [ 2, 3 ], [ 3, 1 ] ]
+    </Example>
+  </Description>
+</ManSection>
+<#/GAPDoc>
+
+<#GAPDoc Label="CircularBlocksWithin">
+<ManSection >
+  <Func Arg="n, first, last" Name="CircularBlocksWithin" />
+  <Func Arg="n, first, last, size" Name="CircularBlocksOfSizeWithin" />
+  <Description>
+    Creates blocks within a region.
+    <Example>
+      gap> CircularBlocksWithin(5,2,4);        
+      [ [ 2 ], [ 3 ], [ 4 ], [ 2, 3 ], [ 3, 4 ], [ 2 .. 4 ] ]
+      gap> CircularBlocksOfSizeWithin(5,2,4,2);
+      [ [ 2, 3 ], [ 3, 4 ] ]
+    </Example>
+  </Description>
+</ManSection>
+<#/GAPDoc>
+
+<#GAPDoc Label="CircularBlock2Inversion">
+<ManSection >
+  <Func Arg="n, block" Name="CircularBlock2Inversion" />
+  <Description>
+    Converts a circular block to signed permutation inverting the block (inversion).
+    <Example>
+      gap> CircularBlock2Inversion(7,[2..5]);
+      p[ 1, -5, -4, -3, -2 ]
+    </Example>
+  </Description>
+</ManSection>
+<#/GAPDoc>

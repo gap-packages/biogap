@@ -1,0 +1,35 @@
+<#GAPDoc Label="SignedPermutation">
+<ManSection >
+  <Func Arg="imagelist" Name="SignedPermutation" />
+  <Description>
+    Creates a signed permutation object based on the list of images. Similarly to transformations
+    for displaying signed permutations the list of images in order is used, but a prefix 'p' 
+    indicates that we have a signed permutation.
+    <Example>
+      gap> sp := SignedPermutation([2,-3,-1]);
+      p[ 2, -3, -1 ]
+    </Example>
+  </Description>
+</ManSection>
+<#/GAPDoc>
+
+<#GAPDoc Label="AsSignedPermutation">
+<ManSection >
+  <Func Arg="signedperm" Name="AsPermutation" />
+  <Func Arg="perm" Name="AsSignedPermutation" />
+  <Description>
+    Though every operation is defined for signed permutations, for more speed it is 
+    advisable to convert them into permutations (on 2n points).
+    <Example>
+      gap> sp := SignedPermutation([-3,2,-1,-5,4]);
+      p[ -3, 2, -1, -5, 4 ]
+      gap> p := AsPermutation(sp);
+      (1,6)(2,5)(7,10,8,9)
+      gap> q := p^6;
+      (7,8)(9,10)
+      gap> AsSignedPermutation(q);
+      p[ 1, 2, 3, -4, -5 ]
+    </Example>
+  </Description>
+</ManSection>
+<#/GAPDoc>
