@@ -142,5 +142,8 @@ end
 InstallMethod( PrintObj,"for a signed permutation",
     [ IsSignedPermutation ],
 function( sp )
- Print("p");PrintObj(ImageListOfSignedPerm(sp));
+  local str, i;
+  str := String(AsPermutation(sp));
+  
+  Print("p");PrintObj(ImageListOfSignedPerm(sp));
 end );
