@@ -142,8 +142,19 @@ end
 InstallMethod( PrintObj,"for a signed permutation",
     [ IsSignedPermutation ],
 function( sp )
-  local str, i;
-  str := String(AsPermutation(sp));
-  
-  Print("p");PrintObj(ImageListOfSignedPerm(sp));
+  local str, c, buffer;
+  str := "";
+  buffer := "";
+  for c in String(AsPermutation(sp)) do
+    if IsDigitChar(c) then
+      Add(buffer, c);
+    else
+      if not IsEmpty(buffer) then
+        str := Concatenation(str,String(BIOGAP_u2s(Int(buffer))));
+      fi;
+      Add(str, c);
+      buffer := "";
+    fi;
+  od;
+    Print(str);
 end );
