@@ -5,7 +5,8 @@ in different group models.
 
 The GAP system is available from www.gap-system.org.
 
-Package dependencies: SgpDec (sgpdec.sf.net), Dust (https://bitbucket.org/egri-nagy/dust).
+Package dependencies: SgpDec (sgpdec.sf.net),
+                      Dust (https://bitbucket.org/egri-nagy/dust).
 
 If you use this package in your research please cite BioGAP as:
 
