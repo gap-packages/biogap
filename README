@@ -1,4 +1,49 @@
 A GAP4 package for abstract algebraic algorithms in bacterial genomics.
 The current implementation contains methods dealing with signed
 permutations and several methods for calculating the word distance
-in different group models. 
+in different group models.
+
+If you use this package in your research please cite BioGAP as:
+
+Attila Egri-Nagy, Andrew R. Francis, Volker Gebhardt, Bacterial Genomics and Computational Group Theory: The BioGAP Package for GAP, ICMS 2014, LNCS 8592, pp. 67–74, 2014.
+
+BibTeX:
+
+@incollection{
+year={2014},
+isbn={978-3-662-44198-5},
+booktitle={Mathematical Software – ICMS 2014},
+volume={8592},
+series={Lecture Notes in Computer Science},
+editor={Hong, Hoon and Yap, Chee},
+doi={10.1007/978-3-662-44199-2_12},
+title={Bacterial Genomics and Computational Group Theory: The BioGAP Package for GAP},
+url={http://dx.doi.org/10.1007/978-3-662-44199-2_12},
+publisher={Springer Berlin Heidelberg},
+keywords={computational group theory; bacterial genomics},
+author={Egri-Nagy, Attila and Francis, Andrew R. and Gebhardt, Volker},
+pages={67-74},
+language={English}
+}
+
+Also, for the 2-inversion model:
+
+Attila Egri-Nagy, Volker Gebhardt, Mark M. Tanaka, Andrew R. Francis: Group-theoretic models of the inversion process in bacterial genomes, Journal of Mathematical Biology, Volume 69, Issue 1, pp 243-265, 2014.
+
+BibTeX:
+
+@article{
+year={2014},
+issn={0303-6812},
+journal={Journal of Mathematical Biology},
+volume={69},
+number={1},
+doi={10.1007/s00285-013-0702-6},
+title={Group-theoretic models of the inversion process in bacterial genomes},
+url={http://dx.doi.org/10.1007/s00285-013-0702-6},
+publisher={Springer Berlin Heidelberg},
+keywords={Bacterial genomics; Group theory; Hyperoctahedral group; Inversion distance; Phylogeny; 20B35; 20B40; 92D15; 68R05},
+author={Egri-Nagy, Attila and Gebhardt, Volker and Tanaka, Mark M. and Francis, Andrew R.},
+pages={243-265},
+language={English}
+}
