@@ -3,6 +3,10 @@ The current implementation contains methods dealing with signed
 permutations and several methods for calculating the word distance
 in different group models.
 
+The GAP system is available from www.gap-system.org.
+
+Package dependencies: SgpDec (sgpdec.sf.net), Dust (https://bitbucket.org/egri-nagy/dust).
+
 If you use this package in your research please cite BioGAP as:
 
 Attila Egri-Nagy, Andrew R. Francis, Volker Gebhardt, Bacterial Genomics and Computational Group Theory: The BioGAP Package for GAP, ICMS 2014, LNCS 8592, pp. 67–74, 2014.
