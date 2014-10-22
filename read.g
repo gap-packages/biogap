@@ -12,3 +12,4 @@ ReadPackage( "biogap", "lib/hyperoctahedral.gi" );
 ReadPackage( "biogap", "lib/geodesics.gi" );
 
 ReadPackage( "biogap", "lib/2inversions.g" );
+ReadPackage( "biogap", "lib/gradedinterval.g" );
