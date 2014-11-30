@@ -115,7 +115,7 @@ DotInterval := function(arg)
     params := rec(generators:=true, elements:=false, profile:=true);
   fi;
   str:="";
-  Append(str,"//dot\n graph{ rankdir=BT \n node [shape=circle,label=\"\",width=0.1]\n");
+  Append(str,"//dot\n graph{ rankdir=BT;ranksep=.2; \n node [shape=circle,label=\"\",width=0.08]\n");
   if IsBound(params.elements) and  params.elements then 
     for g in gi.lookup do
       Append(str, Concatenation(String(Position(gi.lookup,g)), " [label=\"",String(g),"\"]\n"));
