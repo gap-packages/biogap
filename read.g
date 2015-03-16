@@ -14,3 +14,5 @@ ReadPackage( "biogap", "lib/geodesics.gi" );
 ReadPackage( "biogap", "lib/2inversions.g" );
 ReadPackage( "biogap", "lib/gradedinterval.g" );
 ReadPackage( "biogap", "lib/tmp.g" );
+
+ReadPackage( "biogap", "tst/testfunctions.g" );
