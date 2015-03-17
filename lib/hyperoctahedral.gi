@@ -9,6 +9,7 @@
 # cycle, a transposition and a sign flipping           #
 # Note: first two are not inversions                   #
 ########################################################
+#TODO what happens when n=1?
 InstallGlobalFunction(HyperOctahedralAlgebraicGens,
 function(n)
 local gens,l;

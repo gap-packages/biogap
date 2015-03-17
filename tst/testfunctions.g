@@ -19,6 +19,7 @@ local test,infolevel;
 #  infolevel := InfoLevel(BioGapInfoClass);
 #  SetInfoLevel(BioGapInfoClass, 0);
   for test in [
+          "hyperoctahedral",
           "signedperm"
           ] do
     Test(Concatenation(
