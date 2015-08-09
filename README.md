@@ -11,7 +11,7 @@ The GAP system is available from www.gap-system.org. Installing this package is 
 BioGAP into the pkg/ folder of GAP.
 
 Package dependencies: SgpDec (https://github.com/gap-system/sgpdec),
-                      Dust (https://bitbucket.org/egri-nagy/dust).
+                      Dust (https://github.com/egri-nagy/dust).
 
 If you use this package in your research please cite BioGAP as:
 
