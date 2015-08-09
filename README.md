@@ -1,3 +1,5 @@
+# BioGAP
+
 A GAP4 package for abstract algebraic algorithms in bacterial genomics.
 The current implementation contains methods for
 
@@ -5,9 +7,10 @@ The current implementation contains methods for
 * calculating the word distance in different group models,
 * computing the graded interval of all geodesics between two group elements.
 
-The GAP system is available from www.gap-system.org.
+The GAP system is available from www.gap-system.org. Installing this package is just copying the folder containing 
+BioGAP into the pkg/ folder of GAP.
 
-Package dependencies: SgpDec (sgpdec.sf.net),
+Package dependencies: SgpDec (https://github.com/gap-system/sgpdec),
                       Dust (https://bitbucket.org/egri-nagy/dust).
 
 If you use this package in your research please cite BioGAP as:
