@@ -1,11 +1,18 @@
 # returns the graded sets + the actual images in a recursive data structure
 # g,h - group elements in <S>
 # S - generating set
-# d - precalculated distance function (optional)
+# d - precalculated distance function (optional, calculated if not supplied)
 GradedInterval := function(arg)
-  local L, #the graded sets
+  local L, #the graded sets, layers
         n, # d(g,h)
-        gp,s,i,j,k,gps,img,images, lookup, maps, profile, fp, numofedges,visited,ordered, 
+        gp, # an element in the previous grade
+        s, #generator
+        i,j, # for indexing
+        gps,
+        images,
+        numofedges,
+        visited,
+        ordered,
         d,g,h,S; # arguments
   # getting the arguments
   g := arg[1];
