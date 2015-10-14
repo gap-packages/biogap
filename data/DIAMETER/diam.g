@@ -1,13 +1,14 @@
-# n - degree
-MaxDiam := function(n)
-  local Sn, mt, iss, gens, Sns, diams, max;
-  Sn := SymmetricGroup(IsPermGroup, n);
-  mt := MulTab(Sn,Sn);
+# mt - multiplication table of group
+MaxDiam := function(mt)
+  local iss, gens, Gs, diams, max;
   iss := IS(mt,ISCanCons);
   Remove(iss, Position(iss, EmptySet(mt)));
   gens := List(iss, x->SetByIndicatorFunction(x, SortedElements(mt)));
-  Sns := Filtered(List(gens,Group), x-> Size(x) = Size(Sn));
-  diams := List(Sns, x->Diam(x));
+  Gs := Filtered(List(gens,Group), x-> Size(x) = Size(mt));
+  diams := List(Gs, x->Diam(x));
   max := Maximum(diams);
-  return [max, List(Sns{Positions(diams,max)}, GeneratorsOfGroup)];
+  return [max, List(Gs{Positions(diams,max)}, GeneratorsOfGroup)];
 end;
+
+S5 := SymmetricGroup(IsPermGroup,5);
+Print(MaxDiam(MulTab(S5,S5)));
