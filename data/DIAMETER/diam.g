@@ -10,5 +10,4 @@ MaxDiam := function(mt)
   return [max, List(Gs{Positions(diams,max)}, GeneratorsOfGroup)];
 end;
 
-S5 := SymmetricGroup(IsPermGroup,5);
-Print(MaxDiam(MulTab(S5,S5)));
+Perform([1..6], function(x)Display(MaxDiam(MulTab(SymmetricGroup(IsPermGroup,x),SymmetricGroup(IsPermGroup,x))));end);
