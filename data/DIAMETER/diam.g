@@ -11,22 +11,13 @@ SpeedAnalysis := function(gensets)
              speeddistribution := Collected(diams));
 end;
 
-MaxDiam := function(iss,mt)
-  local  gens, Gs, diams, max;
-  gens := List(Filtered(iss,y-> SizeBlist(y) > 0),
-               x->SetByIndicatorFunction(x, SortedElements(mt)));
-  Gs := Filtered(List(gens,Group), x-> Size(x) = Size(mt));
-  diams := List(Gs, x->Diam(x));
-  max := Maximum(diams);
-  return [max, List(Gs{Positions(diams,max)}, GeneratorsOfGroup)];
-end;
-
 Perform([1..5],
 function(x)
   local Sn, mt, gensets;
   Sn := SymmetricGroup(IsPermGroup,x);
   mt := MulTab(Sn,Sn);
-  gensets := List(Filtered(IS(mt,ISCanCons), x->SizeBlist(x)>0),
+  gensets := List(Filtered(IS(mt,ISCanCons),
+                     x->Size(mt)=SizeBlist(SgpInMulTab(x,mt))),
                   y->SetByIndicatorFunction(y,mt));
   Display(SpeedAnalysis(gensets));
 end);
