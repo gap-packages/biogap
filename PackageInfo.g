@@ -69,7 +69,7 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.6",
-  NeededOtherPackages := [["sgpdec", ">=0.7"],["dust", ">=0.1"]],
+  NeededOtherPackages := [["sgpdec", ">=0.7"],["dust", ">=0.1.21"]],
   SuggestedOtherPackages := [["gapdoc", ">=1.5"]],
   ExternalConditions := []),
   AvailabilityTest := ReturnTrue,

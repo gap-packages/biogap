@@ -51,11 +51,7 @@ local geodesics,d,i,o, collector, limits;
   #---------------------------------------
   collector := function (word,result)
     if Length(word) = limits[result] then
-      if result in Keys(geodesics) then
-        AddSet(geodesics[result],ShallowCopy(word));
-      else
-        Assign(geodesics,result,[ShallowCopy(word)]);
-      fi;
+      Collect(geodesics,result,ShallowCopy(word));
     fi;
   end;
   #---------------------------------------
@@ -75,11 +71,7 @@ local numof,d,i,o, collector, limits;
   #---------------------------------------
   collector := function (word,result)
     if Length(word) = limits[result] then
-      if result in Keys(numof) then
-        Assign(numof, result, numof[result]+1);
-      else
-        Assign(numof,result,1);
-      fi;
+      Count(numof,result);
     fi;
   end;
   #---------------------------------------
