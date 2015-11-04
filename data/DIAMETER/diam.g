@@ -11,7 +11,7 @@ SpeedAnalysis := function(gensets)
              speeddistribution := Collected(diams));
 end;
 
-Perform([1..5],
+Perform([1..6],
 function(x)
   local Sn, mt, gensets;
   Sn := SymmetricGroup(IsPermGroup,x);

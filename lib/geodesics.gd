@@ -4,6 +4,6 @@
 ################################################################################
 
 DeclareGlobalFunction("Distances");
-DeclareGlobalFunction("Geodesic");
 DeclareGlobalFunction("Geodesics");
+DeclareGlobalFunction("AllGeodesics");
 DeclareGlobalFunction("NumOfGeodesics");

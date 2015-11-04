@@ -34,14 +34,14 @@ local d;
 end;
 
 #associates each group element with its length
-InstallGlobalFunction(Geodesic,
+InstallGlobalFunction(Geodesics,
 function(G)
   return TracedOrbit2LookupTable(G,x->x);
 end);
 
 #associates a group element with the set of all its geodesics
 #this relies on Distances
-InstallGlobalFunction(Geodesics,
+InstallGlobalFunction(AllGeodesics,
 function(G)
 local geodesics,d,i,o, collector, limits;
 
