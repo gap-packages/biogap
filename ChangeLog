@@ -1,5 +1,5 @@
 0.2
-	Cleanup: function abstractions removing copy-paste code duplications.
+	Cleanup: function abstractions removing copy-paste code duplications. Renamings: Geodesic -> Geodesics, Geodesics -> AllGeodesics.
 0.1.15
 	AllTranspositions added.
 0.1.14
