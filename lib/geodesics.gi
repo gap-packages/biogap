@@ -1,19 +1,28 @@
 #Distances, geodesics and their numbers  in groups.
 #All functions return associative lists.
 
-#associates each group element with its length
-InstallGlobalFunction(Distances,
-function(G)
-local lengths,i,o;
-  lengths := AssociativeList();
+# calculates the orbit of the elements of group G
+# starting from the identity and stores the geodesic
+# words transformed by function f in an associative list
+# group element g -> f(geodesic to g)
+TracedOrbit2LookupTable := function(G, f)
+  local al,i,o;
+  al := AssociativeList();
   o := Orb(G, One(G), \*, rec(schreier:=true));
   Enumerate(o);
   for i in [1..Size(o)] do
-    Assign(lengths,
+    Assign(al,
            o[i],
-           Length(TraceSchreierTreeForward(o,i)));
+           f(TraceSchreierTreeForward(o,i)));
   od;
-  return lengths;
+  return al;
+end;
+MakeReadOnlyGlobal("TracedOrbit2LookupTable");
+
+#associates each group element with its length
+InstallGlobalFunction(Distances,
+function(G)
+  return TracedOrbit2LookupTable(G, Length);
 end);
 
 # just to wraparound an associative list containing the distances
@@ -27,16 +36,7 @@ end;
 #associates each group element with its length
 InstallGlobalFunction(Geodesic,
 function(G)
-local al,i,o;
-  al := AssociativeList();
-  o := Orb(G, One(G), \*, rec(schreier:=true));
-  Enumerate(o);
-  for i in [1..Size(o)] do
-    Assign(al,
-           o[i],
-           TraceSchreierTreeForward(o,i));
-  od;
-  return al;
+  return TracedOrbit2LookupTable(G,x->x);
 end);
 
 #associates a group element with the set of all its geodesics
