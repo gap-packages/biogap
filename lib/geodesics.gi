@@ -43,14 +43,13 @@ end);
 #this relies on Distances
 InstallGlobalFunction(AllGeodesics,
 function(G)
-local geodesics,d,i,o, collector, limits;
-
-  limits := Distances(G);
+  local geodesics,d,i,o, collector, distances;
+  distances := Distances(G);
   geodesics := AssociativeList();
-  d := MaxValueInAssociativeList(limits);
+  d := MaxValueInAssociativeList(distances);
   #---------------------------------------
   collector := function (word,result)
-    if Length(word) = limits[result] then
+    if Length(word) = distances[result] then
       Collect(geodesics,result,ShallowCopy(word));
     fi;
   end;
@@ -60,17 +59,15 @@ local geodesics,d,i,o, collector, limits;
 end);
 
 #just getting the number of geodesics, but not the words while searching
-#TODO this can be merged with Geodesics
 InstallGlobalFunction(NumOfGeodesics,
 function(G)
-local numof,d,i,o, collector, limits;
-
-  limits := Distances(G);
+  local numof,d,i,o, collector, distances;
+  distances := Distances(G);
   numof := AssociativeList();
-  d := MaxValueInAssociativeList(limits);
+  d := MaxValueInAssociativeList(distances);
   #---------------------------------------
   collector := function (word,result)
-    if Length(word) = limits[result] then
+    if Length(word) = distances[result] then
       Count(numof,result);
     fi;
   end;
