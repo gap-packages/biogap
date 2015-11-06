@@ -9,10 +9,10 @@
 # d - distance function of G (using its generating set)
 InstallGlobalFunction(Circle,
         function(G, g, r, d)
-  return Filtered(G, x -> d(g,x) = r);
+  return Set(Filtered(G, x -> d(g,x) = r));
 end);
 
 InstallGlobalFunction(Ball,
 function(G, g, r, d)
-  return Filtered(G, x -> d(g,x)<= r);
+  return Set(Filtered(G, x -> d(g,x)<= r));
 end);
