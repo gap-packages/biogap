@@ -16,3 +16,8 @@ InstallGlobalFunction(Ball,
 function(G, g, r, d)
   return Set(Filtered(G, x -> d(g,x)<= r));
 end);
+
+InstallGlobalFunction(DistanceFromSet,
+function(A, g, d)
+  return Minimum(List(A, x-> d(g,x)));#TODO how about non-symmetric generating sets?
+end);

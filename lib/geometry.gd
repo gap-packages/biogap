@@ -5,3 +5,4 @@
 
 DeclareGlobalFunction("Circle");
 DeclareGlobalFunction("Ball");
+DeclareGlobalFunction("DistanceFromSet");
