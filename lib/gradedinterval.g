@@ -2,6 +2,7 @@
 # g,h - group elements in <S>
 # S - generating set
 # d - precalculated distance function (optional, calculated if not supplied)
+#TODO distance function may have different gen set
 GradedInterval := function(arg)
   local L, #the graded sets, layers
         n, # d(g,h)
@@ -54,6 +55,10 @@ GradedInterval := function(arg)
              widths:=List(L,Length),
              lookup:=visited,
              nedges := numofedges);
+end;
+
+Interval := function(g,h,S,d)
+  return Union(GradedInterval(g,h,S,d).grades);
 end;
 
 Profile := function(gi)
