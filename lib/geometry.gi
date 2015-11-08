@@ -18,6 +18,12 @@ function(G, g, r, d)
 end);
 
 InstallGlobalFunction(DistanceFromSet,
-function(A, g, d)
+function(g, A, d)
   return Minimum(List(A, x-> d(g,x)));#TODO how about non-symmetric generating sets?
 end);
+
+Interior := function(a,b,c,G, S,d)
+  return Intersection(Ball(G,a,DistanceFromSet(a, Interval(b,c,S,d),d),d),
+                      Ball(G,b,DistanceFromSet(b, Interval(a,c,S,d),d),d),
+                      Ball(G,c,DistanceFromSet(c, Interval(a,b,S,d),d),d));
+end;

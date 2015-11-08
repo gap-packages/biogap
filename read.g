@@ -10,10 +10,11 @@ ReadPackage( "biogap", "lib/circular.gi" );
 ReadPackage( "biogap", "lib/circularblocks.gi" );
 ReadPackage( "biogap", "lib/hyperoctahedral.gi" );
 ReadPackage( "biogap", "lib/geodesics.gi" );
+ReadPackage( "biogap", "lib/gradedinterval.g" );
 ReadPackage( "biogap", "lib/geometry.gi" );
 
 ReadPackage( "biogap", "lib/2inversions.g" );
-ReadPackage( "biogap", "lib/gradedinterval.g" );
+
 ReadPackage( "biogap", "lib/tmp.g" );
 
 ReadPackage( "biogap", "tst/testfunctions.g" );
