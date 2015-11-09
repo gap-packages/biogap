@@ -7,3 +7,5 @@ DeclareGlobalFunction("Distances");
 DeclareGlobalFunction("Geodesics");
 DeclareGlobalFunction("AllGeodesics");
 DeclareGlobalFunction("NumOfGeodesics");
+
+DeclareAttribute("DistanceFunction",IsGroup);

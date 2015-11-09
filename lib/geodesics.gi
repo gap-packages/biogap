@@ -27,11 +27,12 @@ end);
 
 # just to wraparound an associative list containing the distances
 # in order to have a lookup table for distances
-DistanceFunction := function(G)
+InstallMethod(DistanceFunction,[IsGroup],
+        function(G)
 local d;
   d := Distances(G);
   return function(g1, g2) return d[Inverse(g1)*g2];end;
-end;
+end);
 
 #associates each group element with its length
 InstallGlobalFunction(Geodesics,
