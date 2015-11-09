@@ -23,7 +23,14 @@ function(g, A, d)
 end);
 
 Interior := function(a,b,c,G, S,d)
-  return Intersection(Ball(G,a,DistanceFromSet(a, Interval(b,c,S,d),d),d),
-                      Ball(G,b,DistanceFromSet(b, Interval(a,c,S,d),d),d),
-                      Ball(G,c,DistanceFromSet(c, Interval(a,b,S,d),d),d));
+  local ab, ac, bc;
+  ab := Interval(a,b,S,d);
+  ac := Interval(a,c,S,d);
+  bc := Interval(b,c,S,d);
+  if a in bc then Print("mid:",a); return [a]; fi;
+  if b in ac then Print("mid:",b); return [b]; fi;
+  if c in ab then Print("mid:",c); return [c]; fi;
+  return Intersection(Ball(G,a,DistanceFromSet(a, bc,d), d),
+                      Ball(G,b,DistanceFromSet(b, ac ,d),d),
+                      Ball(G,c,DistanceFromSet(c, ab,d),d));
 end;
