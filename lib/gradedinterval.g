@@ -3,7 +3,7 @@
 # S - generating set
 # d - precalculated distance function (optional, calculated if not supplied)
 #TODO distance function may have different gen set
-GradedInterval := function(arg)
+GradedInterval := function(g,h,G)
   local L, #the graded sets, layers
         n, # d(g,h)
         gp, # an element in the previous grade
@@ -14,16 +14,10 @@ GradedInterval := function(arg)
         numofedges,
         visited,
         ordered,
-        d,g,h,S; # arguments
-  # getting the arguments
-  g := arg[1];
-  h := arg[2];
-  S := arg[3];
-  if IsBound(arg[4]) then
-    d := arg[4];
-  else
-    d := DistanceFunction(Group(S));
-  fi;
+        S, # generators of G
+        d; # distance function in G
+  S := Generators(G);
+  d := DistanceFunction(G);
   n := d(g,h); #the distance between the two elements
   L := [[g]]; # the first grade
   numofedges := List([1..n+1], x->0);
