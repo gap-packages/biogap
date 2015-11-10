@@ -13,7 +13,6 @@ GradedInterval := function(g,h,G)
         images,
         numofedges,
         visited,
-        ordered,
         S, # generators of G
         d; # distance function in G
   S := Generators(G);
@@ -21,8 +20,7 @@ GradedInterval := function(g,h,G)
   n := d(g,h); #the distance between the two elements
   L := [[g]]; # the first grade
   numofedges := List([1..n+1], x->0);
-  ordered := [()];
-  visited := [()];
+  visited := [g];
   images := AssociativeList(); # group -> [[genindx, image]...]
   Assign(images,h,[]);
   # going through all grades
@@ -35,7 +33,6 @@ GradedInterval := function(g,h,G)
         if d(gps,h)=n-i then # if we stay on a geodesic
           if not gps in visited then
             AddSet(visited,gps);
-            Add(ordered, gps);
           fi;
           numofedges[i] := numofedges[i]+1;
           AddSet(L[i+1],gps);
@@ -52,7 +49,7 @@ GradedInterval := function(g,h,G)
 end;
 
 Interval := function(g,h,G)
-  return Union(GradedInterval(g,h,G).grades);
+  return GradedInterval(g,h,G).elts;
 end;
 
 Profile := function(gi)
