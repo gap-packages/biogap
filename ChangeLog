@@ -1,3 +1,5 @@
+0.2.1
+	Adding high-level geometrical functions: Circle, Ball, Interior, DistanceFromSet. DistanceFunction is a stored attribute now.
 0.2
 	Cleanup: function abstractions removing copy-paste code duplications. Renamings: Geodesic -> Geodesics, Geodesics -> AllGeodesics.
 0.1.15

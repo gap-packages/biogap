@@ -11,8 +11,8 @@
 SetPackageInfo( rec(
 PackageName := "biogap",
 Subtitle := "Algebraic Tools for Bacterial Genomics",
-Version := "0.2",
-Date := "04/11/2015",
+Version := "0.2.1",
+Date := "10/11/2015",
 ArchiveURL :=
           "https://bitbucket.org/dersu/biogap",
 ArchiveFormats := ".tar.gz",
@@ -68,7 +68,7 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.6",
+  GAP := ">=4.7",
   NeededOtherPackages := [["sgpdec", ">=0.7"],["dust", ">=0.1.21"]],
   SuggestedOtherPackages := [["gapdoc", ">=1.5"]],
   ExternalConditions := []),
