@@ -51,8 +51,8 @@ GradedInterval := function(g,h,G)
              nedges := numofedges);
 end;
 
-Interval := function(g,h,S,d)
-  return Union(GradedInterval(g,h,S,d).grades);
+Interval := function(g,h,G)
+  return Union(GradedInterval(g,h,G).grades);
 end;
 
 Profile := function(gi)
