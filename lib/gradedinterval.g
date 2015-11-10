@@ -47,7 +47,7 @@ GradedInterval := function(g,h,G)
   return rec(grades:=L,
              images:=images,
              widths:=List(L,Length),
-             lookup:=visited,
+             elts:=visited,
              nedges := numofedges);
 end;
 
@@ -123,17 +123,17 @@ DotInterval := function(arg)
   str:="";
   Append(str,"//dot\n graph{ rankdir=BT;ranksep=.2; \n node [shape=circle,label=\"\",width=0.08]\n");
   if IsBound(params.elements) and  params.elements then 
-    for g in gi.lookup do
-      Append(str, Concatenation(String(Position(gi.lookup,g)), " [label=\"",String(g),"\"]\n"));
+    for g in gi.elts do
+      Append(str, Concatenation(String(Position(gi.elts,g)), " [label=\"",String(g),"\"]\n"));
     od;
   fi;
-  for g in Reversed(gi.lookup) do
+  for g in Reversed(gi.elts) do
     for img in gi.images[g] do
       if IsBound(params.generators) and params.generators then
-        Append(str,Concatenation(String(Position(gi.lookup, g)), " -- ", String(Position(gi.lookup,img[2])),
+        Append(str,Concatenation(String(Position(gi.elts, g)), " -- ", String(Position(gi.elts,img[2])),
                 "[label=\"",String(img[1]) ,"\"]\n"));
       else
-        Append(str,Concatenation(String(Position(gi.lookup, g)), " -- ", String(Position(gi.lookup,img[2])),"\n"));
+        Append(str,Concatenation(String(Position(gi.elts, g)), " -- ", String(Position(gi.elts,img[2])),"\n"));
       fi;
     od;
   od;
