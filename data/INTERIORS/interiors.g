@@ -1,7 +1,7 @@
 S4 := Group(LinearTranspositions(4));
-nontrivelts := Difference(AsSet(S4),[()]);
-for pair in Combinations(nontrivelts, 2) do
-  Print("triangle:", (), " ", pair[1], " ", pair[2], "  interior:");
-  interior := Interior((),pair[1], pair[2], S4); 
+
+for triangle in AllTriangles(S4) do
+  Print("triangle:", triangle[1], " ", triangle[2], " ", triangle[3], "  interior:");
+  interior := Interior(triangle[1],triangle[2], triangle[3], S4); 
   Print(interior, " size:", Size(interior),"\n");
 od;
