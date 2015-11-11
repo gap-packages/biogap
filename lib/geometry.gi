@@ -33,9 +33,9 @@ Interior := function(a,b,c,G)
   ab := Interval(a,b,G);
   ac := Interval(a,c,G);
   bc := Interval(b,c,G);
-  if a in bc then Print("mid"); return [a]; fi;
-  if b in ac then Print("mid"); return [b]; fi;
-  if c in ab then Print("mid"); return [c]; fi;
+  if a in bc then return [a]; fi;
+  if b in ac then return [b]; fi;
+  if c in ab then return [c]; fi;
   return Intersection(Ball(a,DistanceFromSet(a,bc,G),G),
                       Ball(b,DistanceFromSet(b,ac,G),G),
                       Ball(c,DistanceFromSet(c,ab,G),G));
