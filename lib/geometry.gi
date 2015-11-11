@@ -41,6 +41,12 @@ Interior := function(a,b,c,G)
                       Ball(c,DistanceFromSet(c,ab,G),G));
 end;
 
+Circumference := function(a,b,c,G)
+  local d;
+  d := DistanceFunction(G);
+  return d(a,b) + d(b,c) + d(c,a);
+end;
+
 # all triangles in group G with one vertex as ()
 AllTriangles := function(G)
   local nontrivelts;
