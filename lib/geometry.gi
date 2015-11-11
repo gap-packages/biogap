@@ -33,10 +33,17 @@ Interior := function(a,b,c,G)
   ab := Interval(a,b,G);
   ac := Interval(a,c,G);
   bc := Interval(b,c,G);
-  if a in bc then Print("mid:",a); return [a]; fi;
-  if b in ac then Print("mid:",b); return [b]; fi;
-  if c in ab then Print("mid:",c); return [c]; fi;
+  if a in bc then Print("mid"); return [a]; fi;
+  if b in ac then Print("mid"); return [b]; fi;
+  if c in ab then Print("mid"); return [c]; fi;
   return Intersection(Ball(a,DistanceFromSet(a,bc,G),G),
                       Ball(b,DistanceFromSet(b,ac,G),G),
                       Ball(c,DistanceFromSet(c,ab,G),G));
+end;
+
+# all triangles in group G with one vertex as ()
+AllTriangles := function(G)
+  local nontrivelts;
+  nontrivelts := Difference(AsSet(G),[()]);
+  return List(Combinations(nontrivelts, 2), x -> Union([()], x));
 end;
