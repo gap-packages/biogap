@@ -31,7 +31,8 @@ InstallMethod(DistanceFunction,[IsGroup],
         function(G)
 local d;
   d := Distances(G);
-  return function(g1, g2) return d[Inverse(g1)*g2];end;
+  return function(g1, g2) return Lookup(d, Inverse(g1)*g2); end;
+  # same as d[Inverse(g1)*g2];end;
 end);
 
 #associates each group element with its length
