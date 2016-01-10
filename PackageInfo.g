@@ -1,7 +1,7 @@
 #############################################################################
 ##
 #W  PackageInfo.g
-#Y  Copyright (C) 2011-12                Attila Egri-Nagy, Andrew Francis
+#Y  Copyright (C) 2011-16                Attila Egri-Nagy, Andrew Francis
 ##
 ##  Licensing information can be found in the README file of this package.
 ##
@@ -11,8 +11,8 @@
 SetPackageInfo( rec(
 PackageName := "biogap",
 Subtitle := "Algebraic Tools for Bacterial Genomics",
-Version := "0.2.3",
-Date := "11/11/2015",
+Version := "0.2.4",
+Date := "09/01/2016",
 ArchiveURL :=
           "https://bitbucket.org/dersu/biogap",
 ArchiveFormats := ".tar.gz",
@@ -69,7 +69,7 @@ PackageDoc := rec(
 
 Dependencies := rec(
   GAP := ">=4.7",
-  NeededOtherPackages := [["sgpdec", ">=0.7"],["dust", ">=0.1.21"]],
+  NeededOtherPackages := [["subsemi", ">=0.65"]],
   SuggestedOtherPackages := [["gapdoc", ">=1.5"]],
   ExternalConditions := []),
   AvailabilityTest := ReturnTrue,
