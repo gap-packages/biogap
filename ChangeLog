@@ -1,3 +1,5 @@
+0.2.5
+	Just updating dependencies to be compatible with the GAP 4.8.2 packages.
 0.2.4
 	Dust package dependence removed, associative list included for compatibility.
 0.2.3
