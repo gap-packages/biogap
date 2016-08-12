@@ -48,6 +48,12 @@ README_URL :=
 PackageInfoURL :=
   "na",
 
+SourceRepository := rec( 
+  Type := "git", 
+  URL := "https://github.com/gap-packages/biogap"
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+
 AbstractHTML := Concatenation(
   "The <span class=\"pkgname\">biogap</span> package, is a ",
   "<span class=\"pkgname\">GAP</span>  package  for algebraic tools",
