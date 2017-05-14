@@ -74,8 +74,9 @@ PackageDoc := rec(
 ),
 
 Dependencies := rec(
-  GAP := ">=4.8.2",
-  NeededOtherPackages := [["subsemi", ">=0.76"]],
+  GAP := ">=4.8.7",
+  NeededOtherPackages := [["subsemi", ">=0.85"],
+                              ["sgpdec", ">=0.8"]],
   SuggestedOtherPackages := [["gapdoc", ">=1.5"]],
   ExternalConditions := []),
   AvailabilityTest := ReturnTrue,
