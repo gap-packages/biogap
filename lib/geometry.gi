@@ -1,10 +1,11 @@
 ################################################################################
 # Geometry on Cayley graphs.                                                   #
-# (C) Copyright 2011-2015 Attila Egri-Nagy, Andrew Francis                     #
+# Using a distance function we compute 'geometric' objects in the Cayley graph.#
+# (C) Copyright 2011-2017 Attila Egri-Nagy, Andrew Francis                     #
 ################################################################################
 
 # G - group with distance function
-# g - an element of G, the origo
+# g - an element of G, the centre of the circle
 # r - radius
 InstallGlobalFunction(Circle,
 function(g, r, G)
