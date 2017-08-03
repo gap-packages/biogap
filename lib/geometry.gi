@@ -62,6 +62,14 @@ Circumference := function(a,b,c,G)
   return d(a,b) + d(b,c) + d(c,a);
 end;
 
+# this meant to be for the greedy median search
+SumOfDistances := function (g, points, G)
+  local d;
+  d := DistanceFunction(G);
+  return Sum(List(points, x-> d(x,g)));
+end;
+
+# TODO this must be some experiment code, may not belong here
 # all triangles in group G with one vertex as ()
 AllTriangles := function(G)
   local nontrivelts;
