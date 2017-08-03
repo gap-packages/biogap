@@ -11,8 +11,8 @@
 SetPackageInfo( rec(
 PackageName := "biogap",
 Subtitle := "Algebraic Tools for Bacterial Genomics",
-Version := "0.2.5",
-Date := "27/02/2016",
+Version := "0.3-dev",
+Date := "03/08/2017",
 ArchiveURL := "https://github.com/gap-packages/biogap/releases",
 ArchiveFormats := ".tar.gz",
 Persons := [
@@ -47,8 +47,8 @@ README_URL :=
 PackageInfoURL :=
   "na",
 
-SourceRepository := rec( 
-  Type := "git", 
+SourceRepository := rec(
+  Type := "git",
   URL := "https://github.com/gap-packages/biogap"
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),

@@ -1,31 +1,45 @@
 ################################################################################
 # Geometry on Cayley graphs.                                                   #
-# (C) Copyright 2011-2015 Attila Egri-Nagy, Andrew Francis                     #
+# Using a distance function we compute 'geometric' objects in the Cayley graph.#
+# (C) Copyright 2011-2017 Attila Egri-Nagy, Andrew Francis                     #
 ################################################################################
 
+# DistanceFunction is an attribute, so it is stored for subsequent calls
+
 # G - group with distance function
-# g - an element of G, the origo
+# g - an element of G, the centre of the circle
 # r - radius
+# brute force filtering of the elements exactly r away from g
 InstallGlobalFunction(Circle,
 function(g, r, G)
   local d;
   d := DistanceFunction(G);
-  return Set(Filtered(G, x -> d(g,x) = r));
+  return Filtered(G, x -> d(g,x) = r);
 end);
 
 InstallGlobalFunction(Ball,
 function(g, r, G)
   local d;
   d := DistanceFunction(G);
-  return Set(Filtered(G, x -> d(g,x)<= r));
+  return Filtered(G, x -> d(g,x)<= r);
+end);
+
+# unless the generating set is symmetric, we have different to and from
+# distances
+InstallGlobalFunction(DistanceToSet,
+function(g, A, G)
+  local d;
+  d := DistanceFunction(G);
+  return Minimum(List(A, x-> d(g,x)));
 end);
 
 InstallGlobalFunction(DistanceFromSet,
 function(g, A, G)
   local d;
   d := DistanceFunction(G);
-  return Minimum(List(A, x-> d(g,x)));#TODO how about non-symmetric generating sets?
+  return Minimum(List(A, x-> d(x,g)));
 end);
+
 
 Interior := function(a,b,c,G)
   local ab, ac, bc ,d;
