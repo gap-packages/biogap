@@ -50,6 +50,7 @@ Interior := function(a,b,c,G)
   if a in bc then return [a]; fi;
   if b in ac then return [b]; fi;
   if c in ab then return [c]; fi;
+  # TODO Should this be DistanceTo? shall we have two versions?
   return Intersection(Ball(a,DistanceFromSet(a,bc,G),G),
                       Ball(b,DistanceFromSet(b,ac,G),G),
                       Ball(c,DistanceFromSet(c,ab,G),G));
