@@ -69,6 +69,10 @@ SumOfDistances := function (g, points, G)
   return Sum(List(points, x-> d(x,g)));
 end;
 
+Neighbours := function (g, G)
+  return Set(GeneratorsOfGroup(G), x -> g * x);
+end;
+
 # TODO this must be some experiment code, may not belong here
 # all triangles in group G with one vertex as ()
 AllTriangles := function(G)
