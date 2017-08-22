@@ -97,6 +97,11 @@ GreedyMedian := function(a,b,c,G)
   return total;
 end;
 
+#TEST idea
+#pts := [Random(S7), Random(S7), Random(S7)];
+#GreedyMedian(pts[1], pts[2], pts[3],S7);
+#f := x->SumOfDistances(x,pts,S7); Collected(List(S7,f));
+
 # TODO this must be some experiment code, may not belong here
 # all triangles in group G with one vertex as ()
 AllTriangles := function(G)
