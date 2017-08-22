@@ -84,9 +84,9 @@ GreedyMedian := function(a,b,c,G)
   f := g -> SumOfDistances(g, [a,b,c], G);
   total := f(a); #starting from the first point
   closerpoints := Filtered(Set(TwoNeighbours(a,G), x->[f(x),x]),
-                           x->x[1] <= total);
+                           x->x[1] < total);
   while (not (IsEmpty(closerpoints))) do
-    Print(closerpoints);
+    Print(total, " ", closerpoints, "\n");
     total := Maximum(List(closerpoints, x->x[1]));
     closerpoints := Filtered(Set (Concatenation
                                       (List(closerpoints,
