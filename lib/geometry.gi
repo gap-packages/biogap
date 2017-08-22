@@ -73,6 +73,12 @@ Neighbours := function (g, G)
   return Set(GeneratorsOfGroup(G), x -> g * x);
 end;
 
+TwoNeighbours := function(g,G)
+  return Difference(Set(Concatenation(List(Neighbours(g,G),
+                                           x->Neighbours(x,G)))),
+                    [g]);
+end;
+
 # TODO this must be some experiment code, may not belong here
 # all triangles in group G with one vertex as ()
 AllTriangles := function(G)
