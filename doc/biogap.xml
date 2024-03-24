@@ -52,7 +52,7 @@
     how to install it can be obtained from the main &GAP; webpage
    <Alt    Only="LaTeX">\vspace{\baselineskip}</Alt><P/>
        <Alt Only="LaTeX">\noindent\vspace{\baselineskip}</Alt>
-    <URL>http://www.gap-system.org</URL><P/>
+    <URL>https://www.gap-system.org</URL><P/>
 
     <Alt Only="LaTeX">\noindent</Alt> The following is a summary of the steps 
     that should lead to a successful
