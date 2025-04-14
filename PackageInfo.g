@@ -69,7 +69,6 @@ PackageDoc := rec(
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
   LongTitle := "biogap - Bacterial Genomics in GAP",
-  Autoload  := true
 ),
 
 Dependencies := rec(
@@ -79,7 +78,6 @@ Dependencies := rec(
   SuggestedOtherPackages := [["gapdoc", ">=1.5"]],
   ExternalConditions := []),
   AvailabilityTest := ReturnTrue,
-  Autoload := false,
   TestFile := "tst/testinstall.tst",
   Keywords := ["bacterial genomics", "signed permutation"]
 ));
